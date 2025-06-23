@@ -1,3 +1,32 @@
-# algorithm-study
+# Algorithm Study 자료 저장소
 
-https://lumbar-wind-fdb.notion.site/Algorithm-Study-21bbd19b0d2b801193acec42a36a0eac?source=copy_link
+# 알고리즘 스터디 규칙
+
+## 📅 운영 방식
+
+- 
+
+## 🔁 진행 루틴
+
+| 요일 | 활동 |
+| --- | --- |
+| 화 |  |
+| 목 |  |
+| 금 |  |
+
+## 🔗 사용 도구
+
+- GitHub → 코드 저장 및 일정표
+- Notion → 운영 가이드
+- [solved.ac](http://solved.ac/) → 문제 선정 및 분류
+
+## 🗂 폴더/커밋 규칙
+
+- `폴더`: `[본인ID]/[주차 또는 알고리즘]/문제.java`
+- `커밋`: `feat: BOJ_11053_LIS - DP 풀이`
+
+## 📌 참여자 규칙
+
+- 마감 전 PR 제출
+- 1줄 이상 풀이 설명 (README 또는 PR 본문)
+- 코드리뷰 최소 1건 (선택)
