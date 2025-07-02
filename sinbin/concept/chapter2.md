@@ -61,3 +61,111 @@
 ### 공간 복잡도 (Space Complexity)
 
 - 알고리즘이 사용하는 **추가 메모리 양**을 입력 크기 N에 따라 분석
+38. 임의의 숫자를 찾기 위한 순차 탐색을 의사 코드로 표현해라
+
+```c
+function liner_search(arr, target):
+    for i from 0 to length(arr) - 1:
+        if arr[i] == target:
+            return i
+    return -1
+```
+
+39. 정렬된 숫자 들에서 임의의 숫자를 찾기 위한 보간 탐색을 의사 코드로 표현하라
+
+```c
+int interpolation_search(int arr[], int n, int key) {
+int comparisons = 0;
+int low = 0, high = n - 1;
+
+while (low <= high && key >= arr[low] && key <= arr[high]) {
+    comparisons++;
+    int pos = low + ((double)(high - low) / (arr[high] - arr[low])) * (key - arr[low]);
+
+    if (arr[pos] == key) {
+        return pos;
+    }
+
+    if (arr[pos] < key) {
+        low = pos + 1;
+    } else {
+        high = pos - 1;
+    }
+}
+return -1;
+}
+
+```
+
+40. 정렬된 숫자 들에서 임의의 숫자를 찾기 위한 이진 탐색 알고리즘을 의사 코드로 표현해라
+
+```c
+function binarySearch(arr, target):
+    low = 0
+    high = length(arr) - 1
+
+    while low <= high:
+        mid = (low + high) 
+
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+
+```
+
+41. 한붓그리기 문제를 해결하는 알고리즘을 의사코드로 표현해라
+
+```c
+function 한붓그리기(Graph G) {
+    Stack stack;
+    List path;
+    int odd_count = 0;
+    int start = -1;
+
+    // 차수가 홀수인 정점 수 계산
+    for (int v = 0; v < G.numVertices; v++) {
+        if (G.degree[v] % 2 != 0) {
+            odd_count++;
+            start = v;  // 홀수 차수 정점 중 하나를 시작점으로 설정
+        }
+    }
+
+    // 시작점 선택
+    if (odd_count == 0) {
+        for (int v = 0; v < G.numVertices; v++) {
+            if (G.degree[v] > 0) {
+                start = v;
+                break;
+            }
+        }
+    } else if (odd_count != 2) {
+        printf("No Eulerian Path\n");
+        return;
+    }
+
+    initStack(&stack);
+    initList(&path);
+    push(&stack, start);
+
+    while (!isEmpty(stack)) {
+        int v = top(stack);
+        if (hasUnusedEdge(G, v)) {
+            int u = getAnyUnusedNeighbor(G, v);
+            removeEdge(G, v, u);  // 간선을 사용 처리
+            push(&stack, u);
+        } else {
+            int popped = pop(&stack);
+            append(&path, popped);
+        }
+    }
+
+    reverse(&path);
+    printList(path);
+}
+
+```
