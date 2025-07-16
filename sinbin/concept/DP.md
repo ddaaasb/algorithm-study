@@ -20,7 +20,7 @@ DC와 DP 모두
 | 해 조합 방식 | **저장된 해를 재활용**해 구성 | 분할했던 부분들을 **역순으로 병합** |
 | 계산 순서 | **함축적 순서 :** 의존 관계에 따라 자동 결정 | 쪼갠 순서대로 역으로 병합 |
 
-![image.png](attachment:75f40f5f-862d-4561-b0ff-3d784d04a3a7:image.png)
+![image.png](../images/image3.png)
 
 함축적 순서(implict order)이란?
 
@@ -220,9 +220,6 @@ Line 3~4 : 부분 문제 크기
 - L은 부분 문제 길이 (예: L = 1이면 A₁×A₂, L = 2면 A₁×A₂×A₃)
 - i는 시작 행렬의 인덱스
 - j = i + L: 부분 문제의 끝 지점
-- 이미지 설명
-    
-    ![00001 (1).jpg](attachment:81826cf9-9ba7-4db4-98ae-2a5ed432fff2:00001_(1).jpg)
     
 
 Line 5~6 : 초기값 설정
@@ -270,7 +267,7 @@ Line 9~10 : 곱셈 횟수 최소값 갱신
 
 예시 strong→ stone
 
-![image.png](attachment:c7e7003d-ba71-431e-ab1b-452909e16e31:image.png)
+![image.png](../images/image2.png)
 
 편집 거리 : 2
 
@@ -284,7 +281,7 @@ E[i, j] table을 생성한다. → 크기는 m x n
 
 DP이기 때문에 미리 계산한 부분 문제의 조합으로 상위 부분 문제를 해결할 수 있다. 이경우 주변 3개의 글자를 고려하면 된다.
 
-![image.png](attachment:3273afd9-171a-45e2-87aa-e4f3f13479a4:image.png)
+![image.png](../images/image1.png)
 
 ```c
 EditDistance
